@@ -1,0 +1,28 @@
+type Player {
+    id: ID!
+    name: String
+    age: Int
+    team: Team
+}
+
+enum Team {
+    CSK
+    MI
+    RCB
+    KKR
+    SRH
+    DC
+    RR
+    PBKS
+}
+
+type Query {
+    findAllPlayers: [Player]
+    findPlayerById(id: ID!): Player
+}
+
+type Mutation {
+    createPlayer(name: String!, age: Int!, team: Team!): Player
+    updatePlayer(id: ID!, name: String, age: Int, team: Team): Player
+    deletePlayer(id: ID!): Boolean
+}
