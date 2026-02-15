@@ -2,7 +2,6 @@ package com.majeed.graphql.service;
 
 import com.majeed.graphql.model.Player;
 import com.majeed.graphql.model.Team;
-import jakarta.annotation.PostConstruct;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,5 +19,7 @@ public interface PlayerService {
     public Player updatePlayer(Integer id, String name, Integer age, Team team) ;
 
     public void initializePlayers() ;
+
+    public Player transferPlayer(Integer id, Team valueOf);
 
 }

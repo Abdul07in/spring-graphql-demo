@@ -44,4 +44,9 @@ public class PlayerController {
     public Player deletePlayer(@Argument Integer id) {
         return playerService.deletePlayer(id);
     }
+
+    @MutationMapping
+    public Player transferPlayer(@Argument Integer id, @Argument String newTeam) {
+        return playerService.transferPlayer(id, Enum.valueOf(Team.class, newTeam));
+    }
 }

@@ -8,7 +8,7 @@ public class GraphQLServiceGlobalException {
 
     @ExceptionHandler(Exception.class)
     public String handleAllExceptions(Exception ex) {
-        return "An error occurred: " + ex.getMessage();
+        return "An unexpected error occurred. Please try again later.";
     }
 
 }

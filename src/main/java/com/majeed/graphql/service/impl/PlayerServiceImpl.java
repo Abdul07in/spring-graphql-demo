@@ -71,4 +71,18 @@ public class PlayerServiceImpl implements PlayerService{
         addPlayer("Jaydev Unadkat", 30, Team.RR);
         addPlayer("Shikhar Dhawan", 36, Team.DC);
     }
+
+    @Override
+    public Player transferPlayer(Integer id, Team valueOf) {
+        Optional<Player> playerOpt = findPlayerById(id);
+        if (playerOpt.isPresent()) {
+            Player player = playerOpt.get();
+            Player transferredPlayer = new Player(player.id(), player.name(), player.age(), valueOf);
+            players.remove(player);
+            players.add(transferredPlayer);
+            return transferredPlayer;
+        }
+        return null;
+    }
+    
 }
